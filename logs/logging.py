@@ -29,6 +29,10 @@ def get_last_x_logs(x: int) -> str:
     """
     f = open("logs/logs.txt", "r")
     lines = f.readlines()
+    if x > lines.length:
+        x = lines.length
+    if x > 50:
+        x = 50
     return_val = ""
     for i in range(1, x+1):
         return_val = return_val+lines[-1*x]
